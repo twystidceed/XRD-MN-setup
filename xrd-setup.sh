@@ -21,7 +21,7 @@ RPC=6667
 #OTHER VARIABLES
 FOLDER=XRD-MN-setup
 #official name
-NAME=Raven Dark
+NAME='Raven Dark'
 #name2 in script such as line 49 & copy binaries to bin
 NAME2=ravendark
 TICKER=XRD
