@@ -1,5 +1,5 @@
 #!/bin/bash
-# UCC Masternode Setup Script V1.0 for Ubuntu 16.04 LTS
+# XRD Masternode Setup Script V1.0 for Ubuntu 16.04 LTS
 #
 # Script will attempt to auto detect primary public IP address
 # and generate masternode private key unless specified in command line
@@ -15,8 +15,8 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 #TCP port
-PORT=41112
-RPC=41113
+PORT=6666
+RPC=6667
 
 #OTHER VARIABLES
 FOLDER=XRD-MN-setup
