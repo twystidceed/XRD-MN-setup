@@ -1,6 +1,6 @@
 #!/bin/bash
 # xrdmon 1.0 - TourCoin Masternode Monitoring 
-NAME=Raven Dark
+NAME=ravendark
 SCRIPT=xrdmon.sh
 HIDDEN=.ravendarcore
 TICKER=XRD
