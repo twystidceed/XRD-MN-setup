@@ -11,5 +11,5 @@
 <li> For installation on VPS with preset swap use this line - <b>This does NOT install Swap</b> 
 <li> This is typical for more specialized nodes for advanced users
 <li>Copy the entire line below and paste into your ssh session or vps terminal
-<li>git clone https://github.com/twystidceed/XRD-MN-setup.git && cd XRD-MN-setup && bash XRD-setup-noswap.sh
+<li>git clone https://github.com/twystidceed/XRD-MN-setup.git && cd XRD-MN-setup && bash xrd-setup-noswap.sh
 <br><br>

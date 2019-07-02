@@ -1,5 +1,5 @@
 #!/bin/bash
-# UCC Masternode Setup Script V1.0 for Ubuntu 16.04 LTS
+# XRD Masternode Setup Script V1.0 for Ubuntu 16.04 LTS
 #
 # Script will attempt to auto detect primary public IP address
 # and generate masternode private key unless specified in command line
