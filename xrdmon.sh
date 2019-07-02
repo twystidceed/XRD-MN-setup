@@ -2,7 +2,7 @@
 # xrdmon 1.0 - TourCoin Masternode Monitoring 
 NAME=ravendark
 SCRIPT=xrdmon.sh
-HIDDEN=.ravendarcore
+HIDDEN=.ravendarkcore
 TICKER=XRD
 #Processing command line params
 if [ -z $1 ]; then dly=1; else dly=$1; fi   # Default refresh time is 1 sec
