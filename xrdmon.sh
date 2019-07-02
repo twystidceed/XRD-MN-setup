@@ -1,5 +1,5 @@
 #!/bin/bash
-# xrdmon 1.0 - TourCoin Masternode Monitoring 
+# xrdmon 1.0 - XRD Masternode Monitoring 
 NAME=ravendark
 SCRIPT=xrdmon.sh
 HIDDEN=.ravendarkcore
