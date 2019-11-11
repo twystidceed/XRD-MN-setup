@@ -1,4 +1,4 @@
-# XRD-MN-setup
+# XRD-MN-setup x21s hard fork
 <br>
 <li>sudo apt-get update
 <li>sudo apt-get install git

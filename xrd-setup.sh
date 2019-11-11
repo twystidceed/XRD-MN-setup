@@ -30,9 +30,9 @@ CONF=ravendark.conf
 DAEMON=ravendarkd
 CLI=ravendark-cli
 MONITOR=xrdmon.sh
-#SOURCE='https://github.com/UCCNetwork/ucc/releases/download/v2.1.0.0/UCC-Linux64-v2.1.0.0.zip'
-ARCHIVE=ravend.tar.gz
-#FOLDER2=UCC-Linux64-v2.1.0.0
+SOURCE='https://github.com/raven-dark/raven-dark/releases/download/0.4.3/ravendarkd-v0.4.3-ubuntu-xenial.tar.gz'
+ARCHIVE=ravendarkd-v0.4.3-ubuntu-xenial.tar.gz
+#FOLDER2=ravendarkd-v0.4.3-ubuntu-xenial/
 SENTINELSRC='https://github.com/raven-dark/sentinel.git'
 
 #Clear keyboard input buffer
@@ -178,10 +178,30 @@ echo -ne '[###################] (100%)\n'
 rpcuser=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 rpcpassword=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
+#Create 2GB swap file
+if grep -q "SwapTotal" /proc/meminfo; then
+    echo -e "${GREEN}Skipping disk swap configuration...${NC} \n"
+else
+    echo -e "${YELLOW}Creating 2GB disk swap file. \nThis may take a few minutes!${NC} \a"
+    touch /var/swap.img
+    chmod 600 swap.img
+    dd if=/dev/zero of=/var/swap.img bs=1024k count=2000
+    mkswap /var/swap.img 2> /dev/null
+    swapon /var/swap.img 2> /dev/null
+    if [ $? -eq 0 ]; then
+        echo '/var/swap.img none swap sw 0 0' >> /etc/fstab
+        echo -e "${GREEN}Swap was created successfully!${NC} \n"
+    else
+        echo -e "${RED}Operation not permitted! Optional swap was not created.${NC} \a"
+        rm /var/swap.img
+    fi
+fi
+
+
 
  #Extracting Daemon
 cd ~/$FOLDER
-#sudo wget $SOURCE
+sudo wget $SOURCE
 sudo dtrx -n -f $ARCHIVE
 rm -rf $ARCHIVE
 

@@ -30,9 +30,9 @@ CONF=ravendark.conf
 DAEMON=ravendarkd
 CLI=ravendark-cli
 MONITOR=xrdmon.sh
-#SOURCE='https://github.com/UCCNetwork/ucc/releases/download/v2.1.0.0/UCC-Linux64-v2.1.0.0.zip'
-ARCHIVE=ravend.tar.gz
-#FOLDER2=UCC-Linux64-v2.1.0.0
+SOURCE='https://github.com/raven-dark/raven-dark/releases/download/0.4.3/ravendarkd-v0.4.3-ubuntu-xenial.tar.gz'
+ARCHIVE=ravendarkd-v0.4.3-ubuntu-xenial.tar.gz
+#FOLDER2=ravendarkd-v0.4.3-ubuntu-xenial/
 SENTINELSRC='https://github.com/raven-dark/sentinel.git'
 
 #Clear keyboard input buffer
@@ -178,10 +178,9 @@ echo -ne '[###################] (100%)\n'
 rpcuser=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 rpcpassword=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
-
  #Extracting Daemon
 cd ~/$FOLDER
-#sudo wget $SOURCE
+sudo wget $SOURCE
 sudo dtrx -n -f $ARCHIVE
 rm -rf $ARCHIVE
 
